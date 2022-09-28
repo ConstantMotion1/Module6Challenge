@@ -1,0 +1,20 @@
+
+
+body {
+    max-width: max-content;
+    margin: auto;
+    background-color: aliceblue;
+    }
+
+
+#five-day-el {
+    display: flex;
+    
+    
+};
+
+#current-day-el {
+    display: flex;
+}
+
+
