@@ -11,7 +11,7 @@ let geoQuery = function (event) {
     event.preventDefault();
     let city = cityInputEl.value.trim();
     localStorageOperation(city);
-    let geoUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + APIkey;
+    let geoUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=5&appid=" + APIkey;
     fetch(geoUrl)
       .then(function (response) {
         if (response.ok) {
@@ -83,7 +83,7 @@ let displayWeather = function (data) {
     let finalWeather = document.createElement("p");
     let iconEl = document.createElement("img");
 
-    iconEl.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+    iconEl.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
     finalWeather.textContent = weatherInfo;
     currentDayEL.textContent = data.name + " (Current Day)";
     currentDayEL.appendChild(iconEl);
@@ -107,7 +107,7 @@ let displayfiveWeather = function (data) {
     let cityEl = document.createElement("p");
     let iconEl = document.createElement("img");
 
-    iconEl.src = "http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png";
+    iconEl.src = "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png";
     dateEl.innerHTML = data.list[i].dt_txt;
     tempEl.innerHTML = "Temp: " + data.list[i].main.temp + "°C";
     windEl.innerHTML = "Wind: " + data.list[i].wind.speed + "km/h";
